@@ -1,0 +1,129 @@
+<app-header></app-header>
+
+<app-cart></app-cart>
+<!---->
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="myModalLabel" style="font-weight: bold">ĐĂNG NHẬP/ĐĂNG KÝ</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-7" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
+            <!-- Các tab -->
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#Login" data-toggle="tab">Đăng nhập</a></li>
+              <li><a href="#Registration" data-toggle="tab">Đăng ký</a></li>
+            </ul>
+            <!-- Nội dung của tab -->
+            <div class="tab-content">
+              <!-- ĐĂNG NHẬP -->
+              <div class="tab-pane active" id="Login">
+                <form action="javascript:void()" name="dangnhap_from" class="form-horizontal" id="dangnhap_from"
+                  method="post">
+                  <div class="form-group">
+                    <label for="email_login" class="col-sm-3 control-label">UserName</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="input form-control" name="email_login" [(ngModel)]="khachhang.userName"
+                        id="email_login" placeholder="UserName...." />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="pass_login" class="col-sm-3 control-label">Mật khẩu</label>
+                    <div class="col-sm-9">
+                      <input type="password" class="input form-control" name="pass_login"
+                        [(ngModel)]="khachhang.passWord" id="pass_login" placeholder="Mật khẩu...." />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-3">
+                    </div>
+                    <div class="col-sm-9">
+                      <button class="button" type="submit" (click)="singIn()">Đăng nhập</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <!-- ĐĂNG KÝ -->
+              <div class="tab-pane fade" id="Registration">
+                <form class="form-horizontal" name="dangkytk_form" id="dangkytk_form register">
+                  <div class="form-group">
+                    <label for="frm_name" class="col-sm-4 control-label">Họ và Tên</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="input form-control" name="frm_name" [(ngModel)]="khachhang.hoTen"
+                        id="frm_name" required />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="usernametk" class="col-sm-4 control-label">UserName</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="input form-control" name="usernametk" [(ngModel)]="khachhang.userName"
+                        id="usernametk" required />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="emailtk" class="col-sm-4 control-label">Email</label>
+                    <div class="col-sm-8">
+                      <input type="email" class="input form-control" name="emailtk" [(ngModel)]="khachhang.email"
+                        id="emailtk" required />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="pass_tk" class="col-sm-4 control-label">Mật khẩu</label>
+                    <div class="col-sm-8">
+                      <input type="password" class="input form-control" name="pass_tk" [(ngModel)]="khachhang.passWord"
+                        id="pass_tk" required />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="diachi" class="col-sm-4 control-label">Địa chỉ</label>
+                    <div class="col-sm-8">
+                      <input type="text" name="diachi" class="input form-control" [(ngModel)]="khachhang.diaChi"
+                        id="diachi_dk" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="dienthoai" class="col-sm-4 control-label">Số điện thoại</label>
+                    <div class="col-sm-8">
+                      <input type="text" name="dienthoai" [(ngModel)]="khachhang.soDienThoai" class="input form-control"
+                        id="dienthoai_dk" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4">
+                    </div>
+                    <div class="col-sm-8">
+                      <button class="button" (click)="signUp()" type="submit">Đăng ký</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div id="OR" class="hidden-xs">HOẶC</div>
+          </div>
+          <!-- Đăng nhập bằng Facebook - Google -->
+          <div class="col-md-5">
+            <div class="row text-center sign-with">
+              <div class="social-header">Đăng nhập bằng</div>
+              <div class="unit social-column">
+                <div class="social-inner">
+                  <div><a href=""><img src="assets/images/fb-login-button-big.png" alt="login-facebook"></a></div>
+                  <div><a href=""><img src="assets/images/gg-login-button-big.png" alt="login-google"></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<p-toast></p-toast>

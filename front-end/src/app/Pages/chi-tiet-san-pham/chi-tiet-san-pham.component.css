@@ -1,0 +1,38 @@
+:host ::ng-deep {
+  .p-galleria .p-galleria-thumbnail-container {
+    background: transparent;
+  }
+  .input-group {
+    display: flex;
+    align-items: center;
+  }
+
+  .input-group input[type="text"] {
+    width: 50px; /* Điều chỉnh độ rộng của ô input */
+  }
+
+  .adjust-btn {
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .adjust-btn:hover {
+    background-color: #f0f0f0;
+  }
+
+  .plus {
+    margin-left: 5px; /* Khoảng cách giữa nút '+' và ô input */
+  }
+
+  .minus {
+    margin-right: 5px; /* Khoảng cách giữa nút '-' và ô input */
+  }
+
+  .plus:hover,
+  .minus:hover {
+    background-color: #43af50; /* Màu nền khi hover */
+    color: #fff; /* Màu chữ khi hover */
+  }
+}

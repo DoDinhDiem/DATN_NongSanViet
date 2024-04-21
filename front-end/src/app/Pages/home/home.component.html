@@ -1,0 +1,197 @@
+<div id="home-slider">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 header-top-right">
+        <div class="homeslider">
+          <p-galleria [value]="images" [showIndicators]="true" [showThumbnails]="false"
+            [showItemNavigatorsOnHover]="true" [changeItemOnIndicatorHover]="true" [showItemNavigators]="true"
+            [responsiveOptions]="responsiveOptions" [autoPlay]="true" [transitionInterval]="3000">
+            <ng-template pTemplate="item" let-item>
+              <img [src]="baseUrl + 'Uploads/Slide/' + item?.duongDanAnh" style="width: 100%; display: block;" />
+            </ng-template>
+          </p-galleria>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END Home slideder-->
+  <div class="page-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12">
+          <h2 class="page-heading">
+            <span class="page-heading-title"><img alt="fashion" src="assets/images/commerce-tag.png" />
+              Khuyến mãi</span>
+          </h2>
+
+          <ul class="product-list">
+            <p-carousel [value]="sanPhamGiamGia" [numVisible]="5" [numScroll]="1" [circular]="true"
+              [responsiveOptions]="responsiveOptionProducts" [autoplayInterval]="6000" [showIndicators]="false">
+              <ng-template let-item pTemplate="item">
+                <li style="border: 1px solid #eaeaea; margin: 0px 5px; min-height: 319px">
+                  <div class="left-block">
+                    <a [routerLink]="['/chitietsp', item.id]"><img class="img-responsive"
+                        [src]="baseUrl + 'Uploads/Products/' + item.image" alt="product" /></a>
+                    <div class="quick-view">
+                      <a title="Add to my wishlist" class="heart" href="javascript:void(0)"></a>
+                      <a title="Add to compare" class="compare" href="javascript:void(0)"></a>
+                    </div>
+                    <div class="add-to-cart">
+                      <a class="add-item-to-cart" (click)="addToCart(item)" title="Add to Cart"
+                        href="javascript:void(0)" style="font-size: 15px;">Thêm Vào giỏ</a>
+                    </div>
+                  </div>
+                  <div class="right-block">
+                    <h5 class="product-name"><a [routerLink]="['/chitietsp', item.id]">{{ item.tenSanPham }}</a></h5>
+                    <div class="content_price" *ngIf="item.khuyenMai > 0">
+                      <span class="price product-price">
+                        <span style="color: orangered">Giá bán:</span> {{ item.giaBan - item.khuyenMai | number
+                        }}đ</span>
+                      <br><span style="color: black; font-size: 16px;">Giá niêm yết:</span>
+                      <span class="price old-price" style="font-size: 16px;">{{ item.giaBan | number }}đ</span>
+                    </div>
+                    <div class="content_price" *ngIf="item.khuyenMai <= 0">
+                      <span class="price product-price">
+                        <span style="color: orangered">Giá bán:</span> {{ item.giaBan| number }}đ</span>
+                    </div>
+                  </div>
+                </li>
+              </ng-template>
+            </p-carousel>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-page">
+    <div class="container">
+      <!-- featured category  -->
+      <div class="category-featured Vegetables">
+        <nav class="navbar nav-menu show-brand">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-brand"><a href="javascript:void(0)"> <img alt="fashion"
+                  src="assets/images/icon_like.png" />Bán chạy</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
+
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+
+        </nav>
+        <div class="product-featured clearfix">
+          <div class="row">
+
+            <div class="col-sm-12">
+              <div class="box-right">
+                <!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+                <ul class="product-list">
+                  <li class="col-sm-4 product-item" *ngFor="let item of sanPhamBanChay">
+                    <div class="left-block">
+                      <a [routerLink]="['/chitietsp', item.id]"><img class="img-responsive" alt="product"
+                          [src]="baseUrl + 'Uploads/Products/' + item.image" /></a>
+
+                      <div class="quick-view">
+                        <a title="Add to my wishlist" class="heart" href="javascript:void(0)"></a>
+                        <a title="Add to compare" class="compare" href="javascript:void(0)"></a>
+                      </div>
+                      <div class="add-to-cart">
+                        <a class="add-item-to-cart" (click)="addToCart(item)" title="Add to Cart"
+                          href="javascript:void(0)">Thêm vào
+                          giỏ</a>
+                      </div>
+                    </div>
+                    <div class="right-block">
+                      <h5 class="product-name"><a [routerLink]="['/chitietsp', item.id]">{{ item.tenSanPham }}</a></h5>
+
+                      <div class="content_price" *ngIf="item.khuyenMai > 0">
+                        <span class="price product-price">
+                          <span style="color: orangered">Giá bán:</span> {{ item.giaBan - item.khuyenMai | number
+                          }}đ</span>
+                        <br><span style="color: black">Giá niêm yết:</span>
+                        <span class="price old-price">{{ item.giaBan | number }}đ</span>
+                      </div>
+
+                      <div class="content_price" *ngIf="item.khuyenMai <= 0">
+                        <span class="price product-price">
+                          <span style="color: orangered">Giá bán:</span> {{ item.giaBan| number }}đ</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end featured category -->
+
+
+      <div class="category-featured Vegetables">
+        <nav class="navbar nav-menu show-brand">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-brand"><a href="javascript:void(0)"> <img alt="fashion"
+                  src="assets/images/icon_paper-plane.png" />
+                Sản phẩm mới
+              </a></div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
+
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+
+        </nav>
+        <div class="product-featured clearfix">
+          <div class="row">
+
+            <div class="col-sm-12">
+              <div class="box-right">
+                <!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+                <ul class="product-list">
+                  <li class="col-sm-4 product-item" *ngFor="let item of sanPhamMoi">
+                    <div class="left-block">
+                      <a [routerLink]="['/chitietsp', item.id]"><img class="img-responsive" alt="product"
+                          [src]="baseUrl + 'Uploads/Products/' + item.image" /></a>
+
+                      <div class="quick-view">
+                        <a title="Add to my wishlist" class="heart" href="javascript:void(0)"></a>
+                        <a title="Add to compare" class="compare" href="javascript:void(0)"></a>
+                      </div>
+                      <div class="add-to-cart">
+                        <a class="add-item-to-cart" (click)="addToCart(item)" title="Add to Cart"
+                          href="javascript:void(0)">Thêm vào
+                          giỏ</a>
+                      </div>
+                    </div>
+                    <div class="right-block">
+                      <h5 class="product-name"><a [routerLink]="['/chitietsp', item.id]">{{ item.tenSanPham }}</a></h5>
+
+                      <div class="content_price" *ngIf="item.khuyenMai > 0">
+                        <span class="price product-price">
+                          <span style="color: orangered">Giá bán:</span> {{ item.giaBan - item.khuyenMai | number
+                          }}đ</span>
+                        <br><span style="color: black">Giá niêm yết:</span>
+                        <span class="price old-price">{{ item.giaBan | number }}đ</span>
+                      </div>
+
+                      <div class="content_price" *ngIf="item.khuyenMai <= 0">
+                        <span class="price product-price">
+                          <span style="color: orangered">Giá bán:</span> {{ item.giaBan| number }}đ</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p-toast></p-toast>

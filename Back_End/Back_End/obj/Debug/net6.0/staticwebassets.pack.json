@@ -1,0 +1,73 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\LanAnh\\Back_End\\Back_End\\wwwroot\\Uploads\\NhanVien\\nhanvien_1713102146913_0.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\NhanVien\\nhanvien_1713102146913_0.jpg"
+    },
+    {
+      "Id": "D:\\LanAnh\\Back_End\\Back_End\\wwwroot\\Uploads\\NhanVien\\nhanvien_1713102285234_0.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\NhanVien\\nhanvien_1713102285234_0.jpg"
+    },
+    {
+      "Id": "D:\\LanAnh\\Back_End\\Back_End\\wwwroot\\Uploads\\Products\\product_1713078400332_0.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Products\\product_1713078400332_0.jpg"
+    },
+    {
+      "Id": "D:\\LanAnh\\Back_End\\Back_End\\wwwroot\\Uploads\\Products\\product_1713078490371_1.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Products\\product_1713078490371_1.jpg"
+    },
+    {
+      "Id": "D:\\LanAnh\\Back_End\\Back_End\\wwwroot\\Uploads\\Products\\product_1713079597319_0.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Products\\product_1713079597319_0.jpg"
+    },
+    {
+      "Id": "D:\\LanAnh\\Back_End\\Back_End\\wwwroot\\Uploads\\Products\\product_1713080137567_0.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Products\\product_1713080137567_0.jpg"
+    },
+    {
+      "Id": "D:\\LanAnh\\Back_End\\Back_End\\wwwroot\\Uploads\\Slide\\slidesp_1713111296923_0.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Slide\\slidesp_1713111296923_0.jpg"
+    },
+    {
+      "Id": "D:\\LanAnh\\Back_End\\Back_End\\wwwroot\\Uploads\\Slide\\slidesp_1713111443173_0.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Slide\\slidesp_1713111443173_0.jpg"
+    },
+    {
+      "Id": "D:\\LanAnh\\Back_End\\Back_End\\wwwroot\\Uploads\\Slide\\slidesp_1713111450966_1.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Slide\\slidesp_1713111450966_1.jpg"
+    },
+    {
+      "Id": "D:\\LanAnh\\Back_End\\Back_End\\wwwroot\\Uploads\\Slide\\slidesp_1713111459977_2.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Slide\\slidesp_1713111459977_2.jpg"
+    },
+    {
+      "Id": "D:\\LanAnh\\Back_End\\Back_End\\wwwroot\\Uploads\\Slide\\slidesp_1713111472193_3.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Slide\\slidesp_1713111472193_3.jpg"
+    },
+    {
+      "Id": "D:\\LanAnh\\Back_End\\Back_End\\wwwroot\\Uploads\\Slide\\slidesp_1713111478651_4.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Slide\\slidesp_1713111478651_4.jpg"
+    },
+    {
+      "Id": "D:\\LanAnh\\Back_End\\Back_End\\wwwroot\\Uploads\\TinTuc\\tintucsp_1713088366097_0.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\TinTuc\\tintucsp_1713088366097_0.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Back_End.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Back_End.props",
+      "PackagePath": "build\\Back_End.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Back_End.props",
+      "PackagePath": "buildMultiTargeting\\Back_End.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Back_End.props",
+      "PackagePath": "buildTransitive\\Back_End.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

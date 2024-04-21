@@ -1,0 +1,84 @@
+<div id="header" class="header">
+
+  <!-- HEADER CHÍNH -->
+  <div class="container main-header">
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 logo">
+        <a [routerLink]="['/']"><img alt="Eco Shop" src="assets/images/logo.png" /></a>
+      </div>
+      <div class="col-xs-4 col-sm-12 col-md-5 col-lg-4 header-search-box">
+        <form class="form-inline" (submit)="search(s.value)">
+          <div class="form-group input-serach">
+            <input #s type="text" name="q" id="q" placeholder="Tìm kiếm ..." (keyup.enter)="search(s.value)"
+              [value]="searchTerm" required>
+          </div>
+          <button type="submit" class="pull-right btn-search"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+
+      <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 group-button-header">
+        <a title="So sánh" href="#" class="btn-compare">So sánh</a>
+        <a title="Danh sách mong muốn của tôi" href="#" class="btn-heart">Yêu thích</a>
+
+        <div class="btn-cart" id="cart-block">
+          <a title="Đăng nhập" href="" data-toggle="modal" data-target="#myModal">Đăng nhập</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- KẾT THÚC HEADER CHÍNH -->
+  <div id="nav-top-menu" class="nav-top-menu">
+    <div class="container">
+      <div class="row">
+
+        <div id="main-menu" class="col-sm-12 main-menu">
+          <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar">
+                  <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#">MENU</a>
+              </div>
+              <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                  <li [routerLink]="['/']" routerLinkActive="active" class="active"><a><span class="fa fa-home"></span>
+                      Trang chủ</a></li>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Sản phẩm</a>
+                    <ul class="dropdown-menu container-fluid">
+                      <li class="block-container">
+                        <ul class="block">
+                          <li class="link_container" *ngFor="let item of loaiSanPham">
+                            <a [routerLink]="['/loaisp', item.id]">{{ item.tenLoai }}</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li [routerLink]="['/tintuc']" routerLinkActive="active"><a>Tin tức</a></li>
+                  <li [routerLink]="['/chinhsach']" routerLinkActive="active"><a>Chính sách</a></li>
+                  <li [routerLink]="['/gioithieu']" routerLinkActive="active"><a>Giới thiệu</a></li>
+                  <li [routerLink]="['/lienhe']" routerLinkActive="active"><a>Liên hệ</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- Thông tin người dùng trên đầu -->
+      <div id="form-search-opntop">
+      </div>
+      <!-- Thông tin người dùng trên đầu -->
+      <div id="user-info-opntop">
+      </div>
+      <!-- BIỂU TƯỢNG GIỎ HÀNG TRÊN MENU -->
+      <div id="shopping-cart-box-ontop">
+        <i class="fa fa-user" data-toggle="modal" data-target="#myModal"></i>
+
+        <div class="shopping-cart-box-ontop-content"></div>
+      </div>
+    </div>
+  </div>
+</div>

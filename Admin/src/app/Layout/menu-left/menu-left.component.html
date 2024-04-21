@@ -1,0 +1,164 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a [routerLink]="['/']" class="brand-link">
+        <img src="assets/logo.png" style="width: 80%;" alt="AdminLTE Logo">
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ baseUrl }}/Uploads/NhanVien/{{ avatar }}" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a class="d-block">{{ fullName }}</a>
+            </div>
+        </div>
+
+        <!-- SidebarSearch Form -->
+        <div class="form-inline">
+            <div class="input-group" data-widget="sidebar-search">
+                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-sidebar">
+                        <i class="fas fa-search fa-fw"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+             with font-awesome or any other icon font library -->
+                <li class="nav-item menu-open">
+                    <a [routerLink]="['/']" routerLinkActive="active" class="nav-link ">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Dashboard
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-header">Quản lý</li>
+                <li class="nav-item">
+                    <a [routerLink]="['/loaisanpham']" routerLinkActive="active" class="nav-link">
+                        <i class="nav-icon fa-solid fa-table"></i>
+                        <p>
+                            Loại sản phẩm
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLink]="['/sanpham']" routerLinkActive="active" class="nav-link">
+                        <i class="nav-icon fa-solid fa-list"></i>
+                        <p>
+                            Sản phẩm
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLink]="['/loaitintuc']" routerLinkActive="active" class="nav-link">
+                        <i class="nav-icon far fa-calendar-alt"></i>
+                        <p>
+                            Loại tin tức
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLink]="['/tintuc']" routerLinkActive="active" class="nav-link">
+                        <i class="nav-icon fa-solid fa-newspaper"></i>
+                        <p>
+                            Tin tức
+                        </p>
+                    </a>
+                </li>
+                <div *ngIf="role ==='Admin' ">
+
+                    <li class="nav-item">
+                        <a [routerLink]="['/nhanvien']" routerLinkActive="active" class="nav-link">
+                            <i class="nav-icon fa-solid fa-user"></i>
+                            <p>
+                                Nhân viên
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a [routerLink]="['/khachhang']" routerLinkActive="active" class="nav-link">
+                            <i class="nav-icon fa-solid fa-users"></i>
+                            <p>
+                                Khách hàng
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a [routerLink]="['/nhacungcap']" routerLinkActive="active" class="nav-link">
+                            <i class="nav-icon fa-solid fa-user-secret"></i>
+                            <p>
+                                Nhà cung cấp
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a [routerLink]="['/hoadonnhap']" routerLinkActive="active" class="nav-link">
+                            <i class="nav-icon fa-solid fa-chart-simple"></i>
+                            <p>
+                                Hóa đơn nhập
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a [routerLink]="['/hoadonban']" routerLinkActive="active" class="nav-link">
+                            <i class="nav-icon fa-solid fa-chart-simple"></i>
+                            <p>
+                                Hóa đơn bán
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a [routerLink]="['/slide']" routerLinkActive="active" class="nav-link">
+                            <i class="nav-icon fa-solid fa-image"></i>
+                            <p>
+                                Slide
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a [routerLink]="['/gioithieu']" routerLinkActive="active" class="nav-link">
+                            <i class="nav-icon fa-solid fa-address-card"></i>
+                            <p>
+                                Giới thiệu
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a [routerLink]="['/lienhe']" routerLinkActive="active" class="nav-link">
+                            <i class="nav-icon fa-solid fa-address-book"></i>
+                            <p>
+                                Liên hệ
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a [routerLink]="['/chinhsach']" routerLinkActive="active" class="nav-link">
+                            <i class="nav-icon fa-solid fa-building-shield"></i>
+                            <p>
+                                Chính sách
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a [routerLink]="['/quyen']" routerLinkActive="active" class="nav-link">
+                            <i class="nav-icon fa-solid fa-lock"></i>
+                            <p>
+                                Phân quyền
+                            </p>
+                        </a>
+                    </li>
+                </div>
+
+            </ul>
+        </nav>
+    </div>
+</aside>

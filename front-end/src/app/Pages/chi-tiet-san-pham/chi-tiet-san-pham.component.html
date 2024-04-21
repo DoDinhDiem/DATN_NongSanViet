@@ -1,0 +1,161 @@
+<div class="columns-container">
+  <div class="container" id="columns">
+    <!-- row -->
+    <div class="row">
+      <div class="column col-xs-12 col-sm-3" id="left_column">
+        <!-- block category -->
+        <div class="block left-module">
+          <p class="title_block"><span class="fa fa-pagelines"></span> PRODUCT</p>
+
+          <div class="block_content">
+            <!-- layered -->
+            <div class="layered layered-category">
+              <div class="layered-content">
+                <ul class="tree-menu">
+                  <li style="cursor: pointer;" [routerLink]="['/loaisp', item.id]" [routerLinkActive]="['active']"
+                    *ngFor="let item of loaiSanPham">
+                    <span></span><a>{{ item.tenLoai }}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="center_column col-xs-12 col-sm-9" id="center_column">
+        <!-- Product -->
+        <div id="product">
+          <div class="primary-box row">
+            <div class="pb-left-column col-xs-12 col-sm-6">
+
+              <p-galleria [value]="Images" [responsiveOptions]="responsiveOptions"
+                [numVisible]="(Images.length < 2) ? Images.length : 4" [circular]="true">
+                <ng-template pTemplate="item" let-item>
+                  <img [src]="baseUrl + 'Uploads/Products/' + item?.image" style="width: 100%; display: block;" />
+                </ng-template>
+                <ng-template pTemplate="thumbnail" let-item>
+                  <div class="grid grid-nogutter justify-content-center">
+                    <img [style.height.px]="(Images.length < 4) ? 78 : null"
+                      [src]="baseUrl + 'Uploads/Products/' + item?.image" style="display: block;" />
+                  </div>
+                </ng-template>
+              </p-galleria>
+            </div>
+            <div class="pb-right-column col-xs-12 col-sm-6">
+              <h1 class="product-name">{{ sanPham?.tenSanPham }}</h1>
+
+              <div class="product-price-group" *ngIf="sanPham?.khuyenMai > 0">
+                <span class="price product-price"><span style="color: black">Giá bán:</span> {{ sanPham?.giaBan -
+                  sanPham?.khuyenMai | number}}</span>
+                <span style="font-weight: bold">Giá niêm yết: </span><span class="old-price">{{ sanPham?.giaBan | number
+                  }}</span>
+              </div>
+              <div class="product-price-group" *ngIf="sanPham?.khuyenMai <= 0">
+                <span class="price product-price"><span style="color: black">Giá bán:</span> {{ sanPham?.giaBan -
+                  sanPham?.khuyenMai | number}}</span>
+                <span style="font-weight: bold">Giá niêm yết: </span><span class="old-price">{{ sanPham?.giaBan | number
+                  }}</span>
+              </div>
+              <div style="margin-bottom: 60px;">
+              </div>
+              <div class="form-option">
+
+                <div class=" attributes">
+                  <div class="attribute-label">Số lượng:</div>
+                  <div class="attribute-list ">
+                    <span class="adjust-btn minus" (click)="decrement()">-</span>
+                    <input type="text" class="product-qty" name="qty" [value]="quantity" min="0">
+                    <span class="adjust-btn plus" (click)="increment()">+</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-action">
+                <div style="margin-bottom: 60px;">
+                </div>
+                <div class="button-group">
+                  <a class="btn-add-cart add-item-to-cart" style="color: white" title="Add to Carr"
+                    href="javascript:void(0)" (click)="addToCart(sanPham)">Thêm vào giỏ</a>
+                </div>
+                <div class="button-group">
+                  <a class="wishlist" href="javascript:void(0)"><i class="fa fa-heart-o"></i>
+                    <br>Yêu thích</a>
+                  <a class="compare" href="javascript:void(0)"><i class="fa fa-signal"></i>
+                    <br>
+                    So sánh</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- tab product -->
+          <div class="product-tab">
+            <ul class="nav-tab" style="margin-bottom: 0px;">
+              <li class="active">
+                <a aria-expanded="false" data-toggle="tab" href="#product-detail">Mô tả</a>
+              </li>
+              <li>
+                <a aria-expanded="true" data-toggle="tab" href="#comment">Bình luận</a>
+              </li>
+
+            </ul>
+            <div class="tab-container">
+              <div id="product-detail" class="tab-panel active">
+                <p [innerHTML]="sanPham?.moTa"></p>
+              </div>
+              <div id="comment" class="tab-panel">
+                <div class="fb-comments" data-href="https://www.facebook.com/hungdng.92" data-width="100%"
+                  data-numposts="5"></div>
+              </div>
+            </div>
+          </div>
+          <!-- ./tab product -->
+          <!-- box product -->
+          <div class="page-product-box">
+            <h2 class="page-heading">
+              <span class="page-heading-title"> Sản phẩm tương tự</span>
+            </h2>
+            <ul class="product-list">
+              <p-carousel [value]="sanPhams" [numVisible]="3" [numScroll]="1" [circular]="true"
+                [responsiveOptions]="responsiveOptionProducts" [autoplayInterval]="6000" [showIndicators]="false">
+                <ng-template let-item pTemplate="item">
+                  <li style="border: 1px solid #eaeaea; margin: 0px 5px; min-height: 319px">
+                    <div class="left-block">
+                      <a [routerLink]="['/chitietsp', item.id]"><img class="img-responsive"
+                          [src]="baseUrl + 'Uploads/Products/' + item.image" alt="product" /></a>
+                      <div class="quick-view">
+                        <a title="Add to my wishlist" class="heart" href="javascript:void(0)"></a>
+                        <a title="Add to compare" class="compare" href="javascript:void(0)"></a>
+                      </div>
+                      <div class="add-to-cart">
+                        <a class="add-item-to-cart" title="Add to Cart" (click)="addToCart(item)"
+                          href="javascript:void(0)" style="font-size: 15px;">Thêm Vào
+                          giỏ</a>
+                      </div>
+                    </div>
+                    <div class="right-block">
+                      <h5 class="product-name"><a [routerLink]="['/chitietsp', item.id]">{{ item.tenSanPham }}</a></h5>
+                      <div class="content_price" *ngIf="item.khuyenMai > 0">
+                        <span class="price product-price">
+                          <span style="color: orangered">Giá bán:</span> {{ item.giaBan - item.khuyenMai | number
+                          }}đ</span>
+                        <br><span style="color: black; font-size: 16px;">Giá niêm yết:</span>
+                        <span class="price old-price" style="font-size: 16px;">{{ item.giaBan | number }}đ</span>
+                      </div>
+                      <div class="content_price" *ngIf="item.khuyenMai <= 0">
+                        <span class="price product-price">
+                          <span style="color: orangered">Giá bán:</span> {{ item.giaBan| number }}đ</span>
+                      </div>
+                    </div>
+                  </li>
+                </ng-template>
+              </p-carousel>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<p-toast></p-toast>

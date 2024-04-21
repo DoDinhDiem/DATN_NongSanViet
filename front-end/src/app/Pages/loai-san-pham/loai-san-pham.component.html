@@ -1,0 +1,102 @@
+<div class="columns-container">
+  <div class="container" id="columns">
+    <!-- row -->
+    <div class="row">
+      <!-- Left colunm -->
+      <div class="column col-xs-12 col-sm-3" id="left_column">
+        <!-- block category -->
+        <div class="block left-module">
+          <p class="title_block"><span class="fa fa-pagelines"></span> Sản phẩm</p>
+
+          <div class="block_content">
+            <!-- layered -->
+            <div class="layered layered-category">
+              <div class="layered-content">
+                <ul class="tree-menu">
+                  <li style="cursor: pointer;" [routerLink]="['/loaisp', item.id]" [routerLinkActive]="['active']"
+                    *ngFor="let item of loaiSanPham">
+                    <span></span><a>{{ item.tenLoai }}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- ./layered -->
+          </div>
+        </div>
+      </div>
+      <div class="center_column col-xs-12 col-sm-9" id="center_column">
+        <!-- page heading-->
+        <h2 class="page-heading">
+          <span class="page-heading-title">{{ tenLSP }}</span>
+        </h2>
+        <!-- ../page heading-->
+        <!-- Product -->
+        <div id="product">
+          <!-- box product -->
+          <div class="category-featured Vegetables">
+            <div class="product-featured clearfix">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="box-right">
+                    <ul class="product-list">
+                      <li class="col-sm-4 product-item" style="width: 280px;"
+                        *ngFor="let item of sanPhams?.items | paginate: { itemsPerPage: 30, currentPage: p }">
+                        <div class="left-block">
+                          <a [routerLink]="['/chitietsp', item.id]"><img class="img-responsive"
+                              [src]="baseUrl + 'Uploads/Products/' + item.image" alt="product" /></a>
+                          <div class="quick-view">
+                            <a title="Add to my wishlist" class="heart" href="javascript:void(0)"></a>
+                            <a title="Add to compare" class="compare" href="javascript:void(0)"></a>
+                          </div>
+                          <div class="add-to-cart">
+                            <a class="add-item-to-cart" title="Add to Cart" href="javascript:void(0)"
+                              style="font-size: 15px;" (click)="addToCart(item)">Thêm vào giỏ</a>
+                          </div>
+                        </div>
+                        <div class="right-block">
+                          <h5 class="product-name"><a [routerLink]="['/chitietsp', item.id]">{{ item.tenSanPham }}</a>
+                          </h5>
+                          <div class="content_price" *ngIf="item.khuyenMai > 0">
+                            <span class="price product-price">
+                              <span style="color: orangered">Giá bán:</span> {{
+                              item.giaBan - item.khuyenMai | number
+                              }}đ</span>
+                            <br><span style="color: black; font-size: 16px;">Giá niêm
+                              yết:</span>
+                            <span class="price old-price" style="font-size: 16px;">{{
+                              item.giaBan | number }}đ</span>
+                          </div>
+                          <div class="content_price" *ngIf="item.khuyenMai <= 0">
+                            <span class="price product-price">
+                              <span style="color: orangered">Giá bán:</span> {{
+                              item.giaBan| number }}đ</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ./box product -->
+        </div>
+        <!-- Product -->
+        <div class="sortPagiBar">
+          <div class="bottom-pagination">
+            <pagination-controls (pageChange)="p = $event" class="my-pagination"></pagination-controls>
+          </div>
+          <div class="sort-product">
+            <select name="sortby" id="sortby" class="form-control" (change)="onSapXepChange()"
+              [(ngModel)]="sapxepSelects">
+              <option *ngFor="let item of sapxep" [value]="item.value">{{ item.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <!-- ./ Center colunm -->
+    </div>
+    <!-- ./row-->
+  </div>
+</div>

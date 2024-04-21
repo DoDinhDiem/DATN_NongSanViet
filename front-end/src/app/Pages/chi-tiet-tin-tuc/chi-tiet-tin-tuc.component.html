@@ -1,0 +1,130 @@
+<div class="columns-container">
+  <div class="container" id="columns">
+    <!-- row -->
+    <div class="row">
+      <!-- Left colunm -->
+      <div class="column col-xs-12 col-sm-3" id="left_column">
+        <!-- block category -->
+        <div class="block left-module">
+          <p class="title_block"><span class="fa fa-list"></span> Tin tức</p>
+
+          <div class="block_content">
+            <!-- layered -->
+            <div class="layered layered-category">
+              <div class="layered-content">
+                <ul class="tree-menu">
+                  <li *ngFor="let item of loaiTin" [routerLink]="['/loaitintuc', item.id]" routerLinkActive="active">
+                    <span></span><a>{{ item.tenLoaiTin }}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- ./layered -->
+          </div>
+        </div>
+        <!-- ./block category  -->
+        <!-- block video -->
+        <div class="block left-module">
+          <p class="title_block"><span class="fa fa-video-camera"></span> VIDEOS</p>
+
+          <div class="block_content">
+            <iframe width="255" height="300" src="https://www.youtube.com/embed/oFuC0URYKqU" frameborder="0"
+              allowfullscreen=""></iframe>
+          </div>
+        </div>
+        <!-- ./block video  -->
+
+        <!-- block image -->
+        <div class="block left-module">
+          <p class="title_block"><span class="fa fa-camera"></span> GALLERIES</p>
+          <div class="block_content">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="box-right">
+                  <ul class="product-list">
+                    <li class="col-sm-6">
+                      <div class="left-block" style="padding: 5px 5px 5px 5px">
+                        <a><img class="img-responsive" alt="product" style="border-radius: 15%"
+                            src="assets/images/news/news1_300x300.jpg" /></a>
+                        <div class="quick-view">
+                          <a title="Zoom In" href="assets/images/news/news1.jpg" class="search fancybox-button"></a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="col-sm-6">
+                      <div class="left-block" style="padding: 5px 5px 5px 5px">
+                        <a><img class="img-responsive" alt="product" style="border-radius: 15%"
+                            src="assets/images/news/news2_300x300.jpg" /></a>
+                        <div class="quick-view">
+                          <a title="Zoom In" href="assets/images/news/news2.jpg" class="search fancybox-button"></a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="col-sm-6">
+                      <div class="left-block" style="padding: 5px 5px 5px 5px">
+                        <a><img class="img-responsive" alt="product" src="assets/images/news/news3_300x300.jpg" /></a>
+                        <div class="quick-view">
+                          <a title="Zoom In" href="assets/images/news/news3.jpg" class="search fancybox-button"></a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="col-sm-6">
+                      <div class="left-block" style="padding: 5px 5px 5px 5px">
+                        <a><img class="img-responsive" alt="product" style="border-radius: 15%"
+                            src="assets/images/news/news4_300x300.jpg" /></a>
+                        <div class="quick-view">
+                          <a title="Zoom In" href="assets/images/news/news4.jpg" class="search fancybox-button"></a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="col-sm-6">
+                      <div class="left-block" style="padding: 5px 5px 5px 5px">
+                        <a><img class="img-responsive" alt="product" style="border-radius: 15%"
+                            src="assets/images/news/news5_300x300.jpg" /></a>
+                        <div class="quick-view">
+                          <a title="Zoom In" href="assets/images/news/news5.jpg" class="search fancybox-button"></a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="col-sm-6">
+                      <div class="left-block" style="padding: 5px 5px 5px 5px">
+                        <a><img class="img-responsive" alt="product" style="border-radius: 15%"
+                            src="assets/images/news/news6_300x300.jpg" /></a>
+                        <div class="quick-view">
+                          <a title="Zoom In" href="assets/images/news/news6.jpg" class="search fancybox-button"></a>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ./block image  -->
+      </div>
+
+      <!-- Center colunm-->
+      <div class="center_column col-xs-12 col-sm-9" id="center_column">
+        <!-- page heading-->
+        <div class="page-heading">
+          <h2>
+            <span class="page-heading-title"><span class="fa fa-paperclip"></span> {{ chiTiet?.tieuDe }} </span>
+          </h2>
+        </div>
+
+        <div class="entry-meta-data" style="float: right; padding-top: 10px; padding-bottom: 10px">
+          <span class="author">
+            <i class="fa fa-user"></i>
+            bởi: <a> {{ chiTiet?.name }}</a></span>
+          <span class="date ml-5"><i class="fa fa-calendar"></i> {{ chiTiet?.ngayTao | date: 'dd/MM/yyyy' }} </span>
+        </div>
+
+        <div style="padding-top: 50px">
+          <p style="text-align: justify" [innerHTML]="chiTiet?.noiDung"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

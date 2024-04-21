@@ -1,0 +1,36 @@
+<div class="demo_changer" id="demo_changer" [ngClass]="{'active': isActive}">
+  <div class="demo-icon fa fa-shopping-cart" (click)="toggleDemoChanger()">
+    <span class="notify notify-left" id="count-cart">{{ quantity }}</span>
+  </div>
+  <div class="form_holder">
+    <div class="cart-block">
+      <div class="cart-block-content">
+        <div class="cart-block-list">
+          <div class="shop_cart">
+            <table class="shop_table">
+              <tbody id="show-cart">
+                <tr class="cart_item" *ngFor="let item of cartItems">
+                  <td class="product-remove">
+                    <div class="bt_remove_product left" (click)="removeFromCart(item)"></div>
+                  </td>
+                  <td class="product-name"><b>{{item.tenSanPham}} x {{item.soLuong}}</b>
+                    <div class="clr"></div>
+                  </td>
+                  <td class="product-price" valign="top"><span class="amount">{{item.thanhTien | number}}</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+        <div class="toal-cart">
+          <span>Tổng</span>
+          <span class="toal-price pull-right" id="total_price">{{ totalPrice | number}}</span>
+        </div>
+        <div class="cart-buttons">
+          <a [routerLink]="['/giohang']" class="btn-check-out">Giỏ hàng</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

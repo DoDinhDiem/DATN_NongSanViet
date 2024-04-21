@@ -1,0 +1,97 @@
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Dashboard</h1>
+            </div>
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>{{countDonHang}}</h3>
+
+                        <p>Đơn hàng</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-bag"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3>{{countDoanhThu | number}}</h3>
+
+                        <p>Doanh thu</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-warning">
+                    <div class="inner">
+                        <h3>{{countKhachHang}}</h3>
+
+                        <p>Khách hàng</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                        <h3>{{countSanPham}}</h3>
+
+                        <p>Sản phẩm</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-pie-graph"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- ./col -->
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="flex">
+                <h4 class="header-title mb-3">Thống kê các tháng trong năm</h4>
+                <p-dropdown [options]="years" [(ngModel)]="selectedYear"
+                    [ngStyle]="{'margin-left': 'auto'}"></p-dropdown>
+            </div>
+
+
+            <div class="chart-content-bg mb-2">
+                <div class="row text-center">
+                    <div class="col-md-6">
+                        <p class="text-muted mb-0 mt-3">Doanh thu năm hiện tại</p>
+                        <h2 class="fw-normal mb-3">
+                            <span>{{tongNamNow | number}}</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <p-chart type="line" [data]="data" [options]="options"></p-chart>
+        </div>
+    </div>
+</section>

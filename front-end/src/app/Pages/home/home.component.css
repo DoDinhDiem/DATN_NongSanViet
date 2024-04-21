@@ -1,0 +1,41 @@
+/* Customize styles here */
+#home-slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.col-sm-12 {
+  flex: 1;
+}
+
+.homeslider {
+  position: relative;
+}
+
+.slider {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slider li {
+  display: none;
+}
+
+.slider li img {
+  width: 100%;
+  height: auto;
+}
+
+.active {
+  display: block;
+}
