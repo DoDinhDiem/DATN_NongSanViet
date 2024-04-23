@@ -107,6 +107,7 @@ export class HoaDonBanComponent {
         this.hoadonbanService.getById(hoadonban.id).subscribe((data) => {
             this.hoadonban = data;
             this.chiTietHoaDons = data.chiTietHoaDon;
+            console.log(data);
             this.showDialog();
         });
     }

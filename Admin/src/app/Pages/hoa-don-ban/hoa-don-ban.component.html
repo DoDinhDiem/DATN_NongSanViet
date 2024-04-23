@@ -117,16 +117,12 @@
                             </p>
                         </td>
                         <td class="text-center">
-                            <p-accordion>
-                                <p-accordionTab header="Action">
-                                    <button pRipple class="button-actioc-many" (click)="edit(hoadonban)">
-                                        <i class="pi pi-pencil"></i> Sửa
-                                    </button>
-                                    <button class="button-actioc-many" (click)="InHoaDon(hoadonban)">
-                                        <i class="pi pi-book"></i> In hóa đơn
-                                    </button>
-                                </p-accordionTab>
-                            </p-accordion>
+                            <button pButton pRipple icon="pi pi-pencil" style="margin-right: 5px"
+                                class="p-button-rounded p-button-success me-2 action-button"
+                                (click)="edit(hoadonban)"></button>
+                            <button pButton pRipple icon="pi pi-print"
+                                class="p-button-rounded p-button-primary action-button"
+                                (click)="InHoaDon(hoadonban)"></button>
                         </td>
                     </tr>
                 </ng-template>
@@ -230,7 +226,7 @@
                                     <td>{{ item.sanPhamId }}</td>
                                     <td>{{ item.giaNhap | number }}</td>
                                     <td>{{ item.soLuong }}</td>
-                                    <td> {{ chiTietHoaDon.thanhTien | number }}
+                                    <td> {{ item.thanhTien | number }}
                                     </td>
                                 </tr>
                             </tbody>
